@@ -58,7 +58,7 @@ namespace Unit05.Game.Casting
                 Actor tail = segments.Last<Actor>();
                 Point velocity = segments[0].GetVelocity();
                 Point offset = velocity.Reverse();
-                Point position = tail.GetPosition().Add(offset);
+                Point position = segments[0].GetPosition().Add(offset);
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
