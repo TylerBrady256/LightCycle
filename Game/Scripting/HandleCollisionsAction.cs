@@ -48,8 +48,8 @@ namespace Unit05.Game.Scripting
             Food food = (Food)cast.GetFirstActor("food");
             
             int points = food.GetPoints();
-                snake.GrowTail(points);
-                cycler2.GrowTail(points);
+                snake.GrowTail(1);
+                cycler2.GrowTail(1);
 
                 // score.AddPoints(points);
 
