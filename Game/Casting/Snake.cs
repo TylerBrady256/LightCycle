@@ -111,7 +111,7 @@ namespace Unit05.Game.Casting
 
              Point position = new Point(x * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
-                string text = "∞";
+                string text = "8";
                 Color color = Constants.YELLOW;
 
                 Actor segment = new Actor();
