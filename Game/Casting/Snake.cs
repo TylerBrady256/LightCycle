@@ -109,7 +109,7 @@ namespace Unit05.Game.Casting
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
 
-             Point position = new Point(x * Constants.CELL_SIZE, y);
+             Point position = new Point(x * Constants.CELL_SIZE -200, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = "8";
                 Color color = Constants.YELLOW;

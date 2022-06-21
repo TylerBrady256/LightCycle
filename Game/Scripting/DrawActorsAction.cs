@@ -26,6 +26,10 @@ namespace Unit05.Game.Scripting
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
             List<Actor> segments = snake.GetSegments();
+
+            Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
+            List<Actor> segments_2 = cycler2.GetSegments();// probably not working
+            
             Actor score = cast.GetFirstActor("score");
             Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
@@ -33,7 +37,7 @@ namespace Unit05.Game.Scripting
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
             videoService.DrawActor(score);
-            // videoService.DrawActor(food);
+            videoService.DrawActors(segments_2);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

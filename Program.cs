@@ -22,7 +22,7 @@ namespace Unit05
             cast.AddActor("food", new Food());
             cast.AddActor("snake", new Snake());
             cast.AddActor("score", new Score());
-            cast.AddActor("snake2", new Snake()); //adds a second snake, but they are on top of eachother and have the same movement controls//Zak
+            cast.AddActor("cycler2", new Cycler_2());
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
@@ -31,6 +31,7 @@ namespace Unit05
             // create the script
             Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService));
+            script.AddAction("input", new ControlActorsAction2(keyboardService));
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new HandleCollisionsAction());
             script.AddAction("output", new DrawActorsAction(videoService));
