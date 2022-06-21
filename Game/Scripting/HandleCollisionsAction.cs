@@ -104,7 +104,9 @@ namespace Unit05.Game.Scripting
             if (isGameOver == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
+                Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
                 List<Actor> segments = snake.GetSegments();
+                List<Actor> segments_2 = cycler2.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
@@ -119,6 +121,10 @@ namespace Unit05.Game.Scripting
 
                 // make everything white
                 foreach (Actor segment in segments)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
+                foreach (Actor segment in segments_2)
                 {
                     segment.SetColor(Constants.WHITE);
                 }
