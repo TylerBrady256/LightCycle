@@ -22,6 +22,7 @@ namespace Unit05
             cast.AddActor("food", new Food());
             cast.AddActor("snake", new Snake());
             cast.AddActor("score", new Score());
+            cast.AddActor("snake2", new Snake()); //adds a second snake, but they are on top of eachother and have the same movement controls//Zak
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
