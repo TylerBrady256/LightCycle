@@ -49,18 +49,17 @@ namespace Unit05.Game.Scripting
             Food food = (Food)cast.GetFirstActor("food");
             
             int points = food.GetPoints();
+
+            KeyboardService key  = new KeyboardService();
+            bool PlayerONETrail = key.lightCycleToggleLEFTShift();   // Change Keyboard service  
+            bool PlayerTWOTrail = key.lightCycleToggleSpace();  
+    
+            if (PlayerONETrail == true){
                 snake.GrowTail(1);
+            }    
+            if (PlayerTWOTrail == true){ 
                 cycler2.GrowTail(1);
-
-                // score.AddPoints(points);
-
-            // if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            // {
-            //     int points = food.GetPoints();
-            //     snake.GrowTail(points);
-            //     score.AddPoints(points);
-            //     food.Reset();
-            // }
+            }
         }
 
         /// <summary>

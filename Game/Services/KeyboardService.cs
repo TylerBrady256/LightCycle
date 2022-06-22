@@ -53,5 +53,36 @@ namespace Unit05.Game.Services
             return Raylib.IsKeyUp(raylibKey);
         }
 
+
+        public bool toggleONE = true;
+        public bool lightCycleToggleSpace()
+        {
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+            {
+                this.toggleONE = false;
+            }
+            else if (Raylib.IsKeyUp(KeyboardKey.KEY_SPACE))
+            {
+                this.toggleONE = true;
+            }
+            return this.toggleONE;
+        }
+
+
+        public bool toggleTWO = true;
+        public bool lightCycleToggleLEFTShift()
+        {
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT_SHIFT))
+            {
+                this.toggleTWO = false;
+            }
+            else if (Raylib.IsKeyUp(KeyboardKey.KEY_LEFT_SHIFT))
+            {
+                this.toggleTWO = true;
+            }
+            return this.toggleTWO;
+        }
+
+
     }
 }
