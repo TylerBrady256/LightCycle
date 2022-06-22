@@ -106,10 +106,11 @@ namespace Unit05.Game.Casting
         /// </summary>
         private void PrepareBody()
         {
-            int x = Constants.MAX_X / 2;
+            int x = Constants.MAX_X/3;
             int y = Constants.MAX_Y / 2;
+            
 
-             Point position = new Point(x * Constants.CELL_SIZE -200, y);
+                Point position = new Point(x * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = "8";
                 Color color = Constants.YELLOW;
