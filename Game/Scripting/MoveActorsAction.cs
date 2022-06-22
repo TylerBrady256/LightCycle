@@ -13,7 +13,7 @@ namespace Unit05.Game.Scripting
 
             List<Actor> Actor_list = cast.GetAllActors();
             foreach (Actor actor in Actor_list){
-                actor.MoveNext();
+                actor.MoveNext(1,1);
             }
 
         }

@@ -75,10 +75,10 @@ namespace Unit05.Game.Casting
         /// from one side of the screen to the other when it reaches the maximum x and y 
         /// values.
         /// </summary>
-        public virtual void MoveNext()
+        public virtual void MoveNext(int direction_X, int direction_Y)
         {
-            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
-            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+            int x = ((position.GetX() + direction_X*velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+            int y = ((position.GetY() + direction_Y*velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
             position = new Point(x, y);
         }
 
@@ -153,6 +153,21 @@ namespace Unit05.Game.Casting
             }
             this.velocity = velocity;
         }
+
+        // public Point ChangeVelocity(Point velocity) // I was trying to implement vector multiplication.
+        // {
+            
+        //     // foreach (var locaiton in velocity)
+        //     // {
+
+        //     // }
+
+        //     Point vectorMultiple = new Point(1,-1);
+        //     Point results = velocity * vectorMultiple;
+        //    //velocity =  velocity vectorMultiple
+        //    return results;
+
+        // }
 
     }
 }

@@ -57,7 +57,7 @@ namespace Unit05.Game.Casting
             {
                 Actor tail = segments.Last<Actor>();
                 Point velocity = segments[0].GetVelocity();
-                Point offset = velocity.Reverse();
+                Point offset = velocity; //.Reverse();
                 Point position = segments[0].GetPosition().Add(offset);
 
                 Actor segment = new Actor();
@@ -69,7 +69,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <inheritdoc/>
-        public override void MoveNext()
+        public override void MoveNext(int direction_X,int direction_Y)
         {
             // foreach (Actor segment in segments)//Moves each actor to the next position starting with the head and going down the tail.
             // {
@@ -84,7 +84,7 @@ namespace Unit05.Game.Casting
             //     trailing.SetVelocity(velocity);
             // }
 
-            segments[0].MoveNext();// This is needed to move the actor.
+            segments[0].MoveNext(-1,-1);// This is needed to move the actor.
             
                 Actor trailing = segments[0];//head
                 Actor previous = segments[0];
@@ -106,7 +106,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         private void PrepareBody()
         {
-            int x = Constants.MAX_X / 2;
+            int x = Constants.MAX_X ;
             int y = Constants.MAX_Y / 2;
             
 
