@@ -16,7 +16,8 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver = false;
+        private bool play_2_win = false;
+        private bool play_1_win = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -28,7 +29,7 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver == false)
+            if (play_1_win == false && play_2_win == false)
             {
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
@@ -81,27 +82,27 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = true;
+                    play_2_win = true;
                 }
                 if (segment.GetPosition().Equals(head_2.GetPosition())){
-                    isGameOver = true;
+                    play_1_win = true;
                 }
             }
             foreach (Actor segment in body_2)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = true;
+                    play_2_win = true;
                 }
                 if (segment.GetPosition().Equals(head_2.GetPosition())){
-                    isGameOver = true;
+                    play_1_win = true;
                 }
             }
         }
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
+            if (play_1_win == true || play_2_win == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
                 Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
@@ -115,7 +116,14 @@ namespace Unit05.Game.Scripting
                 Point position = new Point(x, y);
 
                 Actor message = new Actor();
-                message.SetText("Game Over!");
+                if (play_1_win){
+                    message.SetText("Player 1 Wins!");
+                    message.SetColor(Constants.YELLOW);
+                }
+                else if (play_2_win){
+                    message.SetText("Player 2 Wins!");
+                    message.SetColor(Constants.RED);
+                }
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
@@ -129,6 +137,17 @@ namespace Unit05.Game.Scripting
                     segment.SetColor(Constants.WHITE);
                 }
                 food.SetColor(Constants.WHITE);
+
+                if (play_1_win){
+                    message.SetText("Player 1 Wins!");
+                    message.SetColor(Constants.YELLOW);
+                    segments[0].SetColor(Constants.YELLOW);
+                }
+                else if (play_2_win){
+                    message.SetText("Player 2 Wins!");
+                    message.SetColor(Constants.RED);
+                    segments_2[0].SetColor(Constants.RED);
+                }
             }
         }
 
