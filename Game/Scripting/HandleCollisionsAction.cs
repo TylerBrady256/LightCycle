@@ -115,37 +115,27 @@ namespace Unit05.Game.Scripting
                 Point position = new Point(x, y);
 
                 Actor message = new Actor();
-                if (play_1_win){
-                    message.SetText("Player 1 Wins!");
-                    message.SetColor(Constants.YELLOW);
-                }
-                else if (play_2_win){
-                    message.SetText("Player 2 Wins!");
-                    message.SetColor(Constants.RED);
-                }
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
-                // make everything white
-                foreach (Actor segment in segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment in segments_2)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-                food.SetColor(Constants.WHITE);
+
 
                 if (play_1_win){
                     message.SetText("Player 1 Wins!");
-                    message.SetColor(Constants.YELLOW);
-                    segments[0].SetColor(Constants.YELLOW);
+                    message.SetColor(Constants.BLUE);
+                    foreach (Actor segment in segments_2)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
+                food.SetColor(Constants.WHITE);
                 }
                 else if (play_2_win){
                     message.SetText("Player 2 Wins!");
-                    message.SetColor(Constants.RED);
-                    segments_2[0].SetColor(Constants.RED);
+                    message.SetColor(Constants.ORANGE);
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
                 }
             }
         }
