@@ -77,6 +77,8 @@ namespace LightCycle.Game.Scripting
             List<Actor> body = flynn.GetBody();
             List<Actor> body_2 = cycler2.GetBody();
 
+            
+
             foreach (Actor segment in body)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
@@ -96,7 +98,32 @@ namespace LightCycle.Game.Scripting
                 if (segment.GetPosition().Equals(head_2.GetPosition())){
                     play_1_win = true;
                 }
+                int counter = 0;
+                foreach(Actor segments in body)
+                {
+                    if (segment.GetPosition().Equals(segments.GetPosition()))
+                    {
+                        //play_2_win=true;
+                       segment.SetColor(Constants.GREEN);
+                       segments.SetColor(Constants.GREEN);
+                       segment.SetText("#"); 
+                       segments.SetText("#");
+                       head.SetColor(Constants.RED);
+                       head_2.SetColor(Constants.RED);
+                       counter++;
+                    }
+                    else
+                    {
+                      head.SetColor(Constants.BLUE);
+                       head_2.SetColor(Constants.ORANGE);  
+                    }
+                    if (counter == 3)
+                    {
+                        play_2_win = true;
+                    }
+                }
             }
+            
         }
 
         private void HandleGameOver(Cast cast)
