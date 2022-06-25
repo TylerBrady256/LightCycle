@@ -1,26 +1,21 @@
-﻿using Unit05.Game.Casting;
-using Unit05.Game.Directing;
-using Unit05.Game.Scripting;
-using Unit05.Game.Services;
+﻿using LightCycle.Game.Casting;
+using LightCycle.Game.Directing;
+using LightCycle.Game.Scripting;
+using LightCycle.Game.Services;
 
 
-namespace Unit05
+namespace LightCycle
 {
-    /// <summary>
-    /// The program's entry point.
-    /// </summary>
+    
     class Program
     {
-        /// <summary>
-        /// Starts the program using the given arguments.
-        /// </summary>
-        /// <param name="args">The given arguments.</param>
+    
         static void Main(string[] args)
         {
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake());
+            cast.AddActor("flynn", new Flynn());
             cast.AddActor("cycler2", new Cycler_2());
 
             // create the services

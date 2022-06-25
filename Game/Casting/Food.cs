@@ -1,21 +1,13 @@
 using System;
 
 
-namespace Unit05.Game.Casting
+namespace LightCycle.Game.Casting
 {
-    /// <summary>
-    /// <para>A tasty item that snakes like to eat.</para>
-    /// <para>
-    /// The responsibility of Food is to select a random position and points that it's worth.
-    /// </para>
-    /// </summary>
+    
     public class Food : Actor
     {
         private int points = 0;
 
-        /// <summary>
-        /// Constructs a new instance of an Food.
-        /// </summary>
         public Food()
         {
             SetText("@");
@@ -23,18 +15,13 @@ namespace Unit05.Game.Casting
             Reset();
         }
 
-        /// <summary>
-        /// Gets the points this food is worth.
-        /// </summary>
-        /// <returns>The points.</returns>
+      
         public int GetPoints()
         {
             return points;
         }
 
-        /// <summary>
-        /// Selects a random position and points that the food is worth.
-        /// </summary>
+        
         public void Reset()
         {
             Random random = new Random();

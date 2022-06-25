@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Unit05.Game.Casting;
-using Unit05.Game.Services;
+using LightCycle.Game.Casting;
+using LightCycle.Game.Services;
 
 
-namespace Unit05.Game.Scripting
+namespace LightCycle.Game.Scripting
 {
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
@@ -43,7 +43,7 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleFoodCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Flynn flynn = (Flynn)cast.GetFirstActor("flynn");
             Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
             // Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
@@ -55,7 +55,7 @@ namespace Unit05.Game.Scripting
             bool PlayerTWOTrail = key.lightCycleToggleSpace();  
     
             if (PlayerONETrail == true){
-                snake.GrowTail(1);
+                flynn.GrowTail(1);
             }    
             if (PlayerTWOTrail == true){ 
                 cycler2.GrowTail(1);
@@ -68,13 +68,13 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Flynn flynn = (Flynn)cast.GetFirstActor("flynn");
             Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
 
-            Actor head = snake.GetHead();
+            Actor head = flynn.GetHead();
             Actor head_2 = cycler2.GetHead();
             
-            List<Actor> body = snake.GetBody();
+            List<Actor> body = flynn.GetBody();
             List<Actor> body_2 = cycler2.GetBody();
 
             foreach (Actor segment in body)
@@ -103,9 +103,9 @@ namespace Unit05.Game.Scripting
         {
             if (play_1_win == true || play_2_win == true)
             {
-                Snake snake = (Snake)cast.GetFirstActor("snake");
+                Flynn flynn = (Flynn)cast.GetFirstActor("flynn");
                 Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
-                List<Actor> segments = snake.GetSegments();
+                List<Actor> segments = flynn.GetSegments();
                 List<Actor> segments_2 = cycler2.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 
@@ -121,7 +121,7 @@ namespace Unit05.Game.Scripting
 
 
                 if (play_1_win){
-                    message.SetText("Player 1 Wins!");
+                    message.SetText("Flynn Wins!");
                     message.SetColor(Constants.BLUE);
                     foreach (Actor segment in segments_2)
                     {
@@ -130,7 +130,7 @@ namespace Unit05.Game.Scripting
                 food.SetColor(Constants.WHITE);
                 }
                 else if (play_2_win){
-                    message.SetText("Player 2 Wins!");
+                    message.SetText("Clue Wins!");
                     message.SetColor(Constants.ORANGE);
                     foreach (Actor segment in segments)
                     {

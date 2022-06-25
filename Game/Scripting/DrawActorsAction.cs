@@ -1,31 +1,26 @@
 using System.Collections.Generic;
-using Unit05.Game.Casting;
-using Unit05.Game.Services;
+using LightCycle.Game.Casting;
+using LightCycle.Game.Services;
 
 
-namespace Unit05.Game.Scripting
+namespace LightCycle.Game.Scripting
 {
-    /// <summary>
-    /// <para>An output action that draws all the actors.</para>
-    /// <para>The responsibility of DrawActorsAction is to draw each of the actors.</para>
-    /// </summary>
+    
     public class DrawActorsAction : Action
     {
         private VideoService videoService;
 
-        /// <summary>
-        /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
-        /// </summary>
+        
         public DrawActorsAction(VideoService videoService)
         {
             this.videoService = videoService;
         }
 
-        /// <inheritdoc/>
+       
         public void Execute(Cast cast, Script script)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            List<Actor> segments = snake.GetSegments();
+            Flynn flynn = (Flynn)cast.GetFirstActor("flynn");
+            List<Actor> segments = flynn.GetSegments();
 
             Cycler_2 cycler2 = (Cycler_2)cast.GetFirstActor("cycler2");
             List<Actor> segments_2 = cycler2.GetSegments();// probably not working
@@ -36,7 +31,7 @@ namespace Unit05.Game.Scripting
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
-            //videoService.DrawActor(score);
+            
             videoService.DrawActors(segments_2);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();

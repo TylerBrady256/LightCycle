@@ -1,8 +1,8 @@
-using Unit05.Game.Casting;
-using Unit05.Game.Services;
+using LightCycle.Game.Casting;
+using LightCycle.Game.Services;
 
 
-namespace Unit05.Game.Scripting
+namespace LightCycle.Game.Scripting
 {
     /// <summary>
     /// <para>An input action that controls the snake.</para>
@@ -50,8 +50,8 @@ namespace Unit05.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            snake.TurnHead(direction);
+            Flynn flynn = (Flynn)cast.GetFirstActor("flynn");
+            flynn.TurnHead(direction);
 
         }
     }
