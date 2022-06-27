@@ -1,7 +1,6 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# LightCycle
+Cycle is a game where the players try to cut each other off using cycles that leave a trail behind them.
+Get 'em!
 
 ---
 ## Getting Started
@@ -23,9 +22,10 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- Game                (source code folder)
-+-- Program.cs          (program entry point)    
++-- Constants.cs        (game constants)
++-- Cycle.csproj       (dotnet project file)
++-- Program.cs          (program entry point) 
 +-- README.md           (general info)
-+-- Unit04.csproj       (dotnet project file)
 ```
 
 ## Required Technologies
@@ -33,5 +33,8 @@ root                    (project root folder)
 * raylib-cs 3.7.0.1
 
 ## Authors
-* Matt Manley (manleym@byui.edu)
-* Scott Burton (burtons@byui.edu)
+Persons involved in programming and debugging this program:
+    Douglas Hill - drhill99@byui.edi
+    Tyler Brady - bra21002@byui.edu
+    Samuel Adams - toby3adams@byui.edu
+    Zak Law - law20018@byui.edu
